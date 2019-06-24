@@ -1,0 +1,17 @@
+namespace: "crystal-multi-tool"
+name: "ccp4"
+version: "0.1"
+readme: "README.md"
+authors:
+    - "Mark Esler https://github.com/eslerm"
+dependencies:
+license:
+    - "BSD-3-Clause"
+tags:
+    - CCP4
+    - X-ray Crystallography
+    - Crystal Data Refinement
+repository: "https://github.com/crystal-multi-tool/ccp4"
+documentation: "https://github.com/crystal-multi-tool/ccp4/README.md"
+homepage: "https://github.com/crystal-multi-tool/ccp4"
+issues: "https://github.com/crystal-multi-tool/ccp4/issues"
