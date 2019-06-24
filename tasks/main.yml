@@ -1,0 +1,6 @@
+---
+# main for crystal-data-pipeline.ccp4
+
+- include_tasks: ccp4.yml
+  when: ccp4 == true
+  tags: ccp4

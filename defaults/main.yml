@@ -1,0 +1,13 @@
+---
+# defaults for crystal-multi-tool.ccp4
+
+# install CCP4 suite
+ccp4: yes
+
+ccp4_download_url: "http://www.ccp4.ac.uk/download/download_file.php?pkg=setup-64&os=linux"
+ccp4_download_dir: "/tmp"
+
+ccp4_install_dir: "/usr/local/bin"
+ccp4_owner: '{{ cmt_owner | default("root") }}'
+ccp4_group: '{{ cmt_group | default("root") }}'
+ccp4_mode: "{{ cmt_mode | default(0755) }}"

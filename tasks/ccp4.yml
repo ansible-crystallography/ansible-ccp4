@@ -1,0 +1,41 @@
+---
+# install CCP4 suite
+
+- name: install CCP4 dependencies
+  yum:
+    name:
+      - libSM
+      - libXi
+      - libXrender
+      - libXrandr
+      - libXfixes
+      - libXcursor
+      - libXinerama
+      - fontconfig
+      - tcsh
+      - "@X Window System"
+    state: present
+
+- name: download CCP4
+  get_url:
+    url: "{{ ccp4_download_url }}"
+    dest: "{{ ccp4_download_dir }}/ccp4.tar.gz"
+
+- name: install CCP4
+  unarchive:
+    src: "{{ ccp4_download_dir }}/ccp4.tar.gz"
+    dest: "{{ ccp4_install_dir }}"
+    owner: "{{ ccp4_owner }}"
+    group: "{{ ccp4_group }}"
+    mode: "{{ ccp4_mode }}"
+    remote_src: yes
+    #extra_opts: "--strip-components=1"
+
+- name: sym link CCP4 installer
+  file:
+    src: "{{ ccp4_install_dir }}/ccp4-7.0-setup-linux64"
+    dest: "{{ ccp4_install_dir }}/ccp4-install"
+    state: link
+
+# ccp4-install must be ran by a user with X11 forwarding at this point
+# for GUI installation
